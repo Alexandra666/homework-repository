@@ -73,7 +73,7 @@ def test_1_additional_arg():
 
 
 def test_2_additional_args():
-    """Testing that if 2 additional args returns everything from 1st arg (inclusively) up to 2nd arg exclusively """
+    """Testing that if 2 additional args returns everything from 1st arg (inclusively) up to 2nd arg exclusively"""
     assert custom_range(string.ascii_lowercase, "g", "p") == [
         "g",
         "h",
