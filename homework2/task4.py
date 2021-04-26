@@ -28,7 +28,8 @@ def cache(func: Callable) -> Callable:
         if args in cache_memo:
             return cache_memo[args]
         else:
-            cache_memo[args] = func(*args)
-            return func(*args)
+            result = func(*args)
+            cache_memo[args] = result
+            return result
 
     return check_if_in_cache
