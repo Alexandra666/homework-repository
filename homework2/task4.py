@@ -22,14 +22,16 @@ from typing import Callable
 
 
 def cache(func: Callable) -> Callable:
-    cache_memo = {}
+    cache_memo = []
 
-    def check_if_in_cache(*args):
-        if args in cache_memo:
-            return cache_memo[args]
+    def check_if_in_cache(*args, **kwargs):
+        call_key = (args, kwargs)
+        for key, value in cache_memo:
+            if key == call_key:
+                return value
         else:
-            result = func(*args)
-            cache_memo[args] = result
+            result = func(*args, **kwargs)
+            cache_memo.append((call_key, result))
             return result
 
     return check_if_in_cache
