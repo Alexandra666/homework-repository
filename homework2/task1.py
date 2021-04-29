@@ -34,7 +34,7 @@ def tokenize(some_file):
 
 
 def get_longest_diverse_words(file_path: str) -> List[str]:
-    with open(file_path, encoding="unicode-escape") as fi:
+    with open(file_path, encoding="unicode-escape", errors="ignore") as fi:
         longest_unique = []
         for token in tokenize(fi):
             if token.type == "word":
@@ -52,7 +52,7 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
 
 
 def get_rarest_char(file_path: str) -> str:
-    with open(file_path, encoding="unicode-escape") as fi:
+    with open(file_path, encoding="unicode-escape", errors="ignore") as fi:
         set_of_symbols = set()
         list_of_symbols = []
         for token in tokenize(fi):
@@ -69,7 +69,7 @@ def get_rarest_char(file_path: str) -> str:
 
 
 def count_punctuation_chars(file_path: str) -> int:
-    with open(file_path, encoding="unicode-escape") as fi:
+    with open(file_path, encoding="unicode-escape", errors="ignore") as fi:
         punctuation_counter = 0
         for token in tokenize(fi):
             if token.type == "punctuation":
@@ -78,7 +78,7 @@ def count_punctuation_chars(file_path: str) -> int:
 
 
 def count_non_ascii_chars(file_path: str) -> int:
-    with open(file_path, encoding="unicode-escape") as fi:
+    with open(file_path, encoding="unicode-escape", errors="ignore") as fi:
         non_ascii_counter = 0
         for token in tokenize(fi):
             if token.type != "word":
@@ -88,7 +88,7 @@ def count_non_ascii_chars(file_path: str) -> int:
 
 
 def get_most_common_non_ascii_char(file_path: str) -> str:
-    with open(file_path, encoding="unicode-escape") as fi:
+    with open(file_path, encoding="unicode-escape", errors="ignore") as fi:
         list_of_non_ascii = []
         set_of_non_ascii = set()
         for token in tokenize(fi):
