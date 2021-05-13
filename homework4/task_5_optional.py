@@ -14,11 +14,11 @@ Definition of done:
 * https://en.wikipedia.org/wiki/Fizz_buzz
 ** https://www.youtube.com/watch?v=NSzsYWckGd4
 """
-from typing import Generator
+from typing import Iterator
 
 
-def fizzbuzz(n: int) -> Generator[str]:
-    for i in range(1, n + 1):
-        yield "fizz buzz" * (i % 15 == 0) or "fizz" * (i % 3 == 0) or "buzz" * (
-            i % 5 == 0
-        ) or f"{i}"
+def fizzbuzz(n: int) -> Iterator[str]:
+    for num in range(1, n + 1):
+        yield "fizz buzz" * (num % 15 == 0) or "fizz" * (num % 3 == 0) or "buzz" * (
+            num % 5 == 0
+        ) or f"{num}"

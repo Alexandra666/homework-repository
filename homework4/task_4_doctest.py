@@ -24,9 +24,6 @@ You will learn:
  - how to run doctests
  - how to write instructions
 
-
-
-
 * https://en.wikipedia.org/wiki/Fizz_buzz
 ** Энциклопедия профессора Фортрана page 14, 15, "Робот Фортран, чисть картошку!"
 """
@@ -35,6 +32,11 @@ from typing import List
 
 def fizzbuzz(n: int) -> List[str]:
     """
+    This function generates list with fizzbuzz* sequence
+
+    * https://en.wikipedia.org/wiki/Fizz_buzz
+
+    Doctests:
     >>> fizzbuzz(1)
     ['1']
     >>> fizzbuzz(3)
@@ -58,13 +60,3 @@ def fizzbuzz(n: int) -> List[str]:
             fizzbuzz_nums.append(f"{current}")
         current += 1
     return fizzbuzz_nums
-
-
-instruction = """  - Install Python 3.8 (https://www.python.org/downloads/)
- - Install pytest `pip install pytest`
- - Clone the repository <https://github.com/Alexandra666/homework-repository>
- - Checkout branch <homework4>
- - Open terminal
- - Change the current path to the path where the cloned folder <homework 4> is located
- - Run a doctest by printing in command line 'python -m doctest -v task_4_doctest.py'
- """
