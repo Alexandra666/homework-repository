@@ -20,7 +20,7 @@ def test_initialization_of_homework_created():
     """Testing that attribute created of homework initialize correctly"""
     homework_1 = Homework("Test text of homework", 2)
     expected = datetime.datetime.now()
-    assert homework_1.created == expected
+    assert homework_1.created - expected < datetime.timedelta(seconds=1)
 
 
 def test_is_active_of_homework_positive():
